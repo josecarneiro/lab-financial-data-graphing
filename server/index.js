@@ -4,22 +4,9 @@ require('dotenv').config();
 
 const debug = require('debug')('base:server');
 const app = require('./../app');
-const database = require('./database');
 
 const PORT = parseInt(process.env.PORT, 10);
-const URI = process.env.MONGODB_URI;
 
-const terminate = () => {
-  debug('Terminating node app.');
-  database.disconnect()
-    .then(() => {
-      debug('Disconnect from database');
-      process.exit(0);
-    });
-};
-
-process.on('SIGINT', terminate);
-process.on('SIGTERM', terminate);
 
 const onError = error => {
   const { syscall, port, code } = error;
@@ -51,13 +38,5 @@ const initiate = () => {
   server.on('listening', () => onListening(server));
 };
 
-database.connect(URI)
-  .then(() => {
-    debug(`Database connected to URI "${ URI }"`);
-    initiate();
-  })
-  .catch(error => {
-    console.error(`There was an error connecting the database to URI "${ URI }"`);
-    debug(error);
-    process.exit(1);
-  });
+initiate();
+
