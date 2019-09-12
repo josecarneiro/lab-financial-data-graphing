@@ -44,27 +44,7 @@ All the files that make your Express app work, including the JavaScript files wh
 
 ### Starter Code
 
-Note that our starter code for this exercise is quite comprehensive. We've already used the Express generator to create the initial project structure. We've also created a JavaScript file to add all your jQuery code.
-
-```
-starter-code/
-├── .gitignore
-├── app.js
-├── bin
-│   └── www
-├── package.json
-├── public
-│   ├── images
-│   ├── javascripts
-│   │   └── financial-data.js
-│   └── stylesheets
-│       └── style.css
-├── routes
-│   ├── index.js
-└── views
-    ├── error.hbs
-    └── index.hbs
-```
+Note that our starter code for this exercise is quite comprehensive. We've already used the ironmaker to create the initial project structure.
 
 The app will be a super simple exercise where we are going to represent some data in a line chart.
 
