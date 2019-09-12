@@ -1,2 +1,22 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<h1 class="my-4">Lab financial data graphing</h1>
+
+<div class="form-row mb-5">
+  <div class="col-5">
+    <label for="from">From:</label>
+    <input class="form-control" type="date" id="from">
+  </div>
+  <div class="col-5">
+    <label for="to">To:</label>
+    <input class="form-control" type="date" id="to">
+  </div>
+  <div class="col">
+    <label for="currency">Currency:</label>
+    <select class="form-control" id="currency">
+      <option value="usd">USD</option>
+      <option value="eur">EUR</option>
+    </select>
+  </div>
+</div>
+
+
+<canvas id="myChart" width="400" height="400"></canvas>
